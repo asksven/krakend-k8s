@@ -1,0 +1,45 @@
+apiVersion: extensions/v1beta1
+kind: Deployment
+metadata:
+  name: fake-api-deployment
+spec:
+  replicas: 1
+  template:
+    metadata:
+      name: fake-api
+      labels:
+        app: fake-api  
+    spec:
+      containers:
+      - name: fake-api
+        image: fake-api:0.1
+        ports:
+        - containerPort: 8080
+        imagePullPolicy: Never
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: fake-api-svc
+spec:
+  selector:
+    app: fake-api
+  ports:
+  - name: http
+    port: 8080
+    targetPort: 8080
+#---
+#apiVersion: extensions/v1beta1
+#kind: Ingress
+#metadata:
+#  name: fake-api
+#  annotations:
+#    kubernetes.io/ingress.class: nginx
+#spec:
+#  rules:
+#  - host: fake-api.local
+#    http:
+#      paths:
+#      - backend:
+#          serviceName: fake-api-svc
+#          servicePort: 8080             

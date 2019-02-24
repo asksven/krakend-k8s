@@ -10,7 +10,7 @@
             "endpoint": "/supu",
             "backend": [
                 {
-                    "host": [ "http://krakend-service:8000" ],
+                    "host": [ "http://krakend-svc:8000" ],
                     "url_pattern": "/__debug/supu"
                 }
             ]
@@ -33,12 +33,12 @@
           "endpoint": "/splash",
           "backend": [
             {
-              "host": [ "http://fake-api:8080" ],
+              "host": [ "http://fake-api-svc:8080" ],
               "url_pattern": "/shop/campaigns.json",
               "whitelist": [ "campaigns" ]
             },
             {
-              "host": [ "http://fake-api:8080" ],
+              "host": [ "http://fake-api-svc:8080" ],
               "url_pattern": "/shop/products.json",
               "whitelist": [ "products" ]
             }
