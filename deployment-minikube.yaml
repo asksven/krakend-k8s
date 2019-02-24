@@ -14,7 +14,7 @@ spec:
     spec:
       containers:
       - name: krakend
-        image: k8s-krakend:0.1
+        image: k8s-krakend:0.2
         ports:
         - containerPort: 8080
         imagePullPolicy: Never

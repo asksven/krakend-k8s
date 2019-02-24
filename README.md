@@ -26,7 +26,7 @@ Note that we habe commented-out the `ingress` exposing `fake-api.local`. For tes
 
 ```
 cd ..
-docker build -t k8s-krakend:0.1 .
+docker build -t k8s-krakend:0.2 .
 kubectl -n fake-api apply -f deployment-minikube.yaml
 ```
 
